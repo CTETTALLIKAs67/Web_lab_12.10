@@ -470,7 +470,7 @@ function rotateMatrix(matrix) {
  *  [2, 9, 5, 9]    => [2, 5, 9, 9]
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
-function sortByAsc(/* arr */) {
+function sortByAsc(arr) {
     function quickSort(items, left, right) {
         if (left >= right) 
         {
@@ -505,7 +505,11 @@ function sortByAsc(/* arr */) {
         quickSort(items, left, j);
         quickSort(items, i, right);
     }
+    quickSort(arr, 0, arr.length - 1);
+    return arr;
 }
+
+console.log(sortByAsc([-2, 9, 5, -3]))
 
 /**
  * Shuffles characters in a string so that the characters with an odd index are moved to the end of the string at each iteration.
